@@ -29,9 +29,13 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+# merit for ranking and points
+gem 'merit'
 # Devise for user auth
 gem 'devise'
+# counntry select
+gem 'country_select'
+gem "paperclip"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
