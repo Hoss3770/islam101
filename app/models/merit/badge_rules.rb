@@ -34,9 +34,8 @@ module Merit
       # If it has 5 votes, grant relevant-commenter badge
       # grant_on 'comments#vote', badge: 'relevant-commenter',
       #   to: :user do |comment|
-      #
-      #   comment.votes.count == 5
-      # end
+      #     comment.votes.count == 5
+      #   end
 
       # Changes his name by one wider than 4 chars (arbitrary ruby code case)
       # grant_on 'registrations#update', badge: 'autobiographer',
