@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170126071433) do
+ActiveRecord::Schema.define(version: 20170204111820) do
 
   create_table "badges_sashes", force: :cascade do |t|
     t.integer  "badge_id"
@@ -20,6 +20,36 @@ ActiveRecord::Schema.define(version: 20170126071433) do
     t.index ["badge_id", "sash_id"], name: "index_badges_sashes_on_badge_id_and_sash_id"
     t.index ["badge_id"], name: "index_badges_sashes_on_badge_id"
     t.index ["sash_id"], name: "index_badges_sashes_on_sash_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "points"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["name"], name: "index_courses_on_name", unique: true
+  end
+
+  create_table "lesons", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "index"
+    t.integer  "points"
+    t.integer  "level_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["level_id"], name: "index_lesons_on_level_id"
+  end
+
+  create_table "levels", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "points"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_levels_on_course_id"
+    t.index ["name"], name: "index_levels_on_name", unique: true
   end
 
   create_table "merit_actions", force: :cascade do |t|
