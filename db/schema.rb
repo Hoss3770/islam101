@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170204111820) do
+ActiveRecord::Schema.define(version: 20170206110630) do
 
   create_table "badges_sashes", force: :cascade do |t|
     t.integer  "badge_id"
@@ -48,8 +48,16 @@ ActiveRecord::Schema.define(version: 20170204111820) do
     t.integer  "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "index"
     t.index ["course_id"], name: "index_levels_on_course_id"
     t.index ["name"], name: "index_levels_on_name", unique: true
+  end
+
+  create_table "levels_users", id: false, force: :cascade do |t|
+    t.integer "level_id"
+    t.integer "user_id"
+    t.index ["level_id"], name: "index_levels_users_on_level_id"
+    t.index ["user_id"], name: "index_levels_users_on_user_id"
   end
 
   create_table "merit_actions", force: :cascade do |t|
