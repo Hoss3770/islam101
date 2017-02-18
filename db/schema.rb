@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206110630) do
+ActiveRecord::Schema.define(version: 20170218132131) do
 
   create_table "badges_sashes", force: :cascade do |t|
     t.integer  "badge_id"
@@ -37,8 +37,12 @@ ActiveRecord::Schema.define(version: 20170206110630) do
     t.integer  "index"
     t.integer  "points"
     t.integer  "level_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
     t.index ["level_id"], name: "index_lesons_on_level_id"
   end
 

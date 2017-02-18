@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+	resources :lesons, only: [:show]
 
   get "/courses/:id", to: 'courses#show', as: :course
 
