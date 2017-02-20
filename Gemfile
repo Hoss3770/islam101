@@ -32,7 +32,9 @@ gem 'jbuilder', '~> 2.5'
 # merit for ranking and points
 gem 'merit'
 # Devise for user auth
+# auth for pages
 gem 'devise'
+gem 'cancancan'
 # counntry select
 gem 'country_select'
 gem "paperclip"
