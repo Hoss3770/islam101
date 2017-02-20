@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
+  include CanCan::ControllerAdditions
   
   before_action :configure_permitted_params, if: :devise_controller?
 
