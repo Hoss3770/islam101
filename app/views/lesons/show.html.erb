@@ -1,3 +1,9 @@
 <%= @leson.name %>
 <%= @leson.points %>
+<% if can? :see, @leson %>
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/eXIbviGabJ0?rel=0" frameborder="0" allowfullscreen></iframe>
+<% else %>
+Please finish level <%= @leson.level.index %> first
+<% end %>
+
 <%= image_tag @leson.file.url %>
